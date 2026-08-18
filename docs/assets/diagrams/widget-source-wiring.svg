@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+  <title id="title">Widget Blueprint source-component wiring</title>
+  <desc id="desc">Event Construct connects to Set Source Component. A MagicUIView variable is the target and an expose-on-spawn MagicUISource variable supplies the component.</desc>
+  <defs><linearGradient id="bg" x1="0" x2="1"><stop stop-color="#0d1425"/><stop offset="1" stop-color="#17102a"/></linearGradient><pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#314057"/></pattern><marker id="exec" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto"><path d="M0 0v6l9-3z" fill="#f0f3f8"/></marker><marker id="data" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto"><path d="M0 0v6l9-3z" fill="#55c9de"/></marker></defs>
+  <rect width="1200" height="680" rx="24" fill="url(#bg)"/><rect x="24" y="24" width="1152" height="632" rx="18" fill="url(#grid)"/>
+  <text x="52" y="62" fill="#dfe8f8" font-family="Inter,Segoe UI,sans-serif" font-size="20" font-weight="700">WBP_MagicUIScreen · Event Graph</text>
+  <g>
+    <rect x="75" y="150" width="230" height="130" rx="10" fill="#5c2036" stroke="#d45a83"/>
+    <rect x="75" y="150" width="230" height="36" rx="10" fill="#8c2e50"/><text x="94" y="174" fill="#fff" font-family="Inter,Segoe UI,sans-serif" font-size="16" font-weight="700">Event Construct</text>
+    <circle cx="297" cy="219" r="7" fill="#fff"/>
+  </g>
+  <g>
+    <rect x="465" y="112" width="360" height="230" rx="10" fill="#1e4f68" stroke="#55c9de"/>
+    <rect x="465" y="112" width="360" height="38" rx="10" fill="#28718f"/><text x="487" y="138" fill="#fff" font-family="Inter,Segoe UI,sans-serif" font-size="16" font-weight="700">Set Source Component</text>
+    <circle cx="473" cy="190" r="7" fill="#fff"/><text x="493" y="196" fill="#dfe8f8" font-family="Inter,Segoe UI,sans-serif" font-size="14">execute</text>
+    <circle cx="473" cy="244" r="7" fill="#53bfd4"/><text x="493" y="250" fill="#dfe8f8" font-family="Inter,Segoe UI,sans-serif" font-size="14">Target · MagicUIView</text>
+    <circle cx="473" cy="296" r="7" fill="#53bfd4"/><text x="493" y="302" fill="#dfe8f8" font-family="Inter,Segoe UI,sans-serif" font-size="14">In Source Component</text>
+  </g>
+  <g>
+    <rect x="905" y="380" width="225" height="82" rx="10" fill="#2b3a53" stroke="#7087aa"/>
+    <text x="926" y="411" fill="#a8b9d0" font-family="Inter,Segoe UI,sans-serif" font-size="12" font-weight="700">GET WIDGET</text>
+    <text x="926" y="439" fill="#fff" font-family="Inter,Segoe UI,sans-serif" font-size="17">MagicUIView</text><circle cx="912" cy="437" r="7" fill="#53bfd4"/>
+    <rect x="905" y="500" width="225" height="92" rx="10" fill="#2b3a53" stroke="#7087aa"/>
+    <text x="926" y="531" fill="#a8b9d0" font-family="Inter,Segoe UI,sans-serif" font-size="12" font-weight="700">EXPOSE ON SPAWN</text>
+    <text x="926" y="561" fill="#fff" font-family="Inter,Segoe UI,sans-serif" font-size="17">MagicUISource</text><circle cx="912" cy="559" r="7" fill="#53bfd4"/>
+  </g>
+  <path d="M304 219 C365 219 393 190 463 190" fill="none" stroke="#fff" stroke-width="3" marker-end="url(#exec)"/>
+  <path d="M912 437 C760 437 650 400 420 400 L420 244 C434 244 449 244 463 244" fill="none" stroke="#55c9de" stroke-width="3" marker-end="url(#data)"/>
+  <path d="M912 559 C740 559 620 500 400 500 L400 296 C420 296 442 296 463 296" fill="none" stroke="#55c9de" stroke-width="3" marker-end="url(#data)"/>
+  <text x="600" y="635" fill="#98abc8" font-family="Inter,Segoe UI,sans-serif" font-size="15" text-anchor="middle">The child widget receives the exact Actor component instance created for this screen.</text>
+</svg>

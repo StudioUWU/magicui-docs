@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="430" viewBox="0 0 1200 430" role="img" aria-labelledby="title desc">
+  <title id="title">MagicUI web asset lifecycle</title>
+  <desc id="desc">External web source is imported as a MagicUI Web File. Editor sessions use an immutable linked-source snapshot, while cooked builds use the refreshed embedded copy.</desc>
+  <defs><linearGradient id="bg" x1="0" x2="1"><stop stop-color="#0d1425"/><stop offset="1" stop-color="#17102a"/></linearGradient><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#91a6c8"/></marker></defs>
+  <rect width="1200" height="430" rx="24" fill="url(#bg)"/>
+  <text x="55" y="60" fill="#eef3ff" font-family="Inter,Segoe UI,sans-serif" font-size="25" font-weight="700">One import, two safe runtime paths</text>
+  <rect x="55" y="120" width="250" height="175" rx="18" fill="#18233a" stroke="#627797"/>
+  <text x="82" y="159" fill="#beccdf" font-family="Inter,Segoe UI,sans-serif" font-size="14" font-weight="700">AUTHORITATIVE SOURCE</text>
+  <text x="82" y="199" fill="#fff" font-family="Cascadia Mono,monospace" font-size="19">WebSource/Menu/</text>
+  <text x="82" y="230" fill="#9cafca" font-family="Cascadia Mono,monospace" font-size="15">index.html</text>
+  <text x="82" y="256" fill="#9cafca" font-family="Cascadia Mono,monospace" font-size="15">css · js · images · fonts</text>
+  <rect x="385" y="120" width="275" height="175" rx="18" fill="#2a2050" stroke="#9674eb"/>
+  <text x="412" y="159" fill="#c9b8ff" font-family="Inter,Segoe UI,sans-serif" font-size="14" font-weight="700">CONTENT BROWSER</text>
+  <text x="412" y="199" fill="#fff" font-family="Inter,Segoe UI,sans-serif" font-size="21" font-weight="700">MagicUI Web File</text>
+  <text x="412" y="230" fill="#b5a9d7" font-family="Inter,Segoe UI,sans-serif" font-size="15">linked source path</text>
+  <text x="412" y="256" fill="#b5a9d7" font-family="Inter,Segoe UI,sans-serif" font-size="15">embedded last-good snapshot</text>
+  <path d="M305 207 H375" stroke="#91a6c8" stroke-width="3" marker-end="url(#arrow)"/><text x="340" y="194" fill="#91a6c8" font-family="Inter,Segoe UI,sans-serif" font-size="13" text-anchor="middle">import</text>
+  <path d="M660 180 C730 180 744 125 795 125" fill="none" stroke="#91a6c8" stroke-width="3" marker-end="url(#arrow)"/>
+  <path d="M660 242 C730 242 744 307 795 307" fill="none" stroke="#91a6c8" stroke-width="3" marker-end="url(#arrow)"/>
+  <rect x="805" y="85" width="340" height="120" rx="18" fill="#153044" stroke="#4fa3e3"/>
+  <text x="833" y="125" fill="#9ed9ff" font-family="Inter,Segoe UI,sans-serif" font-size="14" font-weight="700">EDITOR / PIE</text>
+  <text x="833" y="159" fill="#fff" font-family="Inter,Segoe UI,sans-serif" font-size="19" font-weight="700">Linked folder snapshot</text>
+  <text x="833" y="184" fill="#9db3cc" font-family="Inter,Segoe UI,sans-serif" font-size="14">Refreshes on the next view/PIE session</text>
+  <rect x="805" y="247" width="340" height="120" rx="18" fill="#173129" stroke="#52d6a5"/>
+  <text x="833" y="287" fill="#9cf0d2" font-family="Inter,Segoe UI,sans-serif" font-size="14" font-weight="700">COOKED / PACKAGED</text>
+  <text x="833" y="321" fill="#fff" font-family="Inter,Segoe UI,sans-serif" font-size="19" font-weight="700">Embedded asset snapshot</text>
+  <text x="833" y="346" fill="#a6c6ba" font-family="Inter,Segoe UI,sans-serif" font-size="14">Refresh packaged copy, save, then cook</text>
+  <text x="55" y="376" fill="#93a5c1" font-family="Inter,Segoe UI,sans-serif" font-size="15">Every live view reads an immutable local magic://bundle/ mount. It never navigates to the original disk path.</text>
+</svg>

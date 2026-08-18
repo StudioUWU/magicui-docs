@@ -1,0 +1,114 @@
+site_name: MagicUI for Unreal Engine
+site_description: Beginner-friendly documentation for building interactive HTML interfaces with the MagicUI Unreal Engine plugin.
+site_url: https://magicui.studiouwu.com/
+
+repo_name: StudioUWU/magicui-docs
+repo_url: https://github.com/StudioUWU/magicui-docs
+edit_uri: ""
+
+theme:
+  name: material
+  logo: assets/images/logo.jpg
+  favicon: assets/images/logo.jpg
+  icon:
+    repo: fontawesome/brands/github
+  palette:
+    - scheme: slate
+      primary: deep purple
+      accent: purple
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+    - scheme: default
+      primary: deep purple
+      accent: purple
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.indexes
+    - navigation.path
+    - navigation.top
+    - navigation.footer
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.code.select
+    - content.code.annotate
+    - content.tabs.link
+
+plugins:
+  - search:
+      separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+nav:
+  - Home: index.md
+  - Getting started:
+      - Start here: getting-started/index.md
+      - 1. Install and enable: getting-started/install-and-enable.md
+      - 2. Create the HTML page: getting-started/create-html.md
+      - 3. Import the HTML asset: getting-started/import-html-asset.md
+      - 4. Render your first screen: getting-started/first-screen.md
+  - Core guides:
+      - Web assets and local content: guides/web-assets.md
+      - Magic UI Component: guides/magic-ui-component.md
+      - Magic UI widget and input: guides/widget-and-input.md
+      - Loading and page lifecycle: guides/loading-and-lifecycle.md
+      - JavaScript bridge: guides/javascript-bridge.md
+      - MagicUI Event component: guides/magicui-events.md
+      - Gameplay Tag events: guides/gameplay-tag-events.md
+      - Show and hide a menu: guides/show-hide-menu.md
+      - Sizing, DPI, and live resize: guides/sizing-and-dpi.md
+      - Rendering modes and performance: guides/rendering-and-performance.md
+      - Transparency and pass-through: guides/transparency.md
+      - Render texture and world-space UI: guides/render-texture.md
+  - Packaging:
+      - Cook and package web UI: packaging/cooking-and-packaging.md
+  - Reference:
+      - Blueprint API: reference/blueprint-api.md
+      - JavaScript API: reference/javascript-api.md
+      - Supported content: reference/supported-content.md
+      - Platforms and limitations: reference/platforms-and-limitations.md
+  - Help:
+      - Troubleshooting: help/troubleshooting.md
+
+extra_css:
+  - assets/stylesheets/extra.css
+
+extra_javascript:
+  - https://unpkg.com/mermaid@11/dist/mermaid.min.js
+
+copyright: Copyright &copy; 2026 StudioUWU

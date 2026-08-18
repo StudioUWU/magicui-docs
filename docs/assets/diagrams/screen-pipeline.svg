@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="410" viewBox="0 0 1200 410" role="img" aria-labelledby="title desc">
+  <title id="title">MagicUI screen pipeline</title>
+  <desc id="desc">An imported HTML asset loads into a Magic UI Component, produces a texture, and is displayed by a Magic UI widget in a Canvas Panel. Input returns through the widget.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1"><stop stop-color="#0d1425"/><stop offset="1" stop-color="#17102a"/></linearGradient>
+    <linearGradient id="purple" x1="0" x2="1"><stop stop-color="#7047df"/><stop offset="1" stop-color="#a855b5"/></linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#8ba2c8"/></marker>
+    <filter id="shadow"><feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#000" flood-opacity=".25"/></filter>
+  </defs>
+  <rect width="1200" height="410" rx="24" fill="url(#bg)"/>
+  <text x="52" y="55" fill="#d9e5fb" font-family="Inter,Segoe UI,sans-serif" font-size="24" font-weight="700">MagicUI is like magic...</text>
+  <text x="52" y="83" fill="#8394b2" font-family="Inter,Segoe UI,sans-serif" font-size="15">Content flows left to right. Mouse, keyboard, and focus travel back through the UMG widget.</text>
+  <g filter="url(#shadow)">
+    <rect x="52" y="125" width="230" height="145" rx="16" fill="#18233a" stroke="#465b82"/>
+    <rect x="329" y="125" width="250" height="145" rx="16" fill="#18233a" stroke="#8062db"/>
+    <rect x="626" y="125" width="220" height="145" rx="16" fill="#18233a" stroke="#4e9ad6"/>
+    <rect x="893" y="125" width="255" height="145" rx="16" fill="#18233a" stroke="#d16ba5"/>
+  </g>
+  <circle cx="86" cy="160" r="16" fill="#ec7bbb"/><text x="82" y="166" fill="#fff" font-family="Segoe UI,sans-serif" font-size="18" font-weight="700">1</text>
+  <text x="78" y="201" fill="#fff" font-family="Inter,Segoe UI,sans-serif" font-size="20" font-weight="700">MagicUI Web File</text>
+  <text x="78" y="229" fill="#9cafca" font-family="Inter,Segoe UI,sans-serif" font-size="14">Imported index.html</text>
+  <text x="78" y="250" fill="#9cafca" font-family="Inter,Segoe UI,sans-serif" font-size="14">+ bundled resources</text>
+  <circle cx="363" cy="160" r="16" fill="#8b65e8"/><text x="359" y="166" fill="#fff" font-family="Segoe UI,sans-serif" font-size="18" font-weight="700">2</text>
+  <text x="355" y="201" fill="#fff" font-family="Inter,Segoe UI,sans-serif" font-size="20" font-weight="700">Magic UI Component</text>
+  <text x="355" y="229" fill="#9cafca" font-family="Inter,Segoe UI,sans-serif" font-size="14">Owns page + lifecycle</text>
+  <text x="355" y="250" fill="#9cafca" font-family="Inter,Segoe UI,sans-serif" font-size="14">Publishes Blueprint events</text>
+  <circle cx="660" cy="160" r="16" fill="#4fa3e3"/><text x="656" y="166" fill="#fff" font-family="Segoe UI,sans-serif" font-size="18" font-weight="700">3</text>
+  <text x="652" y="201" fill="#fff" font-family="Inter,Segoe UI,sans-serif" font-size="20" font-weight="700">Rendered texture</text>
+  <text x="652" y="229" fill="#9cafca" font-family="Inter,Segoe UI,sans-serif" font-size="14">sRGB + straight alpha</text>
+  <text x="652" y="250" fill="#9cafca" font-family="Inter,Segoe UI,sans-serif" font-size="14">CPU or accelerated present</text>
+  <circle cx="927" cy="160" r="16" fill="#dd6dac"/><text x="923" y="166" fill="#fff" font-family="Segoe UI,sans-serif" font-size="18" font-weight="700">4</text>
+  <text x="919" y="201" fill="#fff" font-family="Inter,Segoe UI,sans-serif" font-size="20" font-weight="700">Magic UI widget</text>
+  <text x="919" y="229" fill="#9cafca" font-family="Inter,Segoe UI,sans-serif" font-size="14">Inside a Canvas Panel</text>
+  <text x="919" y="250" fill="#9cafca" font-family="Inter,Segoe UI,sans-serif" font-size="14">Draws + forwards input</text>
+  <path d="M282 198 H319" stroke="#8ba2c8" stroke-width="3" marker-end="url(#arrow)"/>
+  <path d="M579 198 H616" stroke="#8ba2c8" stroke-width="3" marker-end="url(#arrow)"/>
+  <path d="M846 198 H883" stroke="#8ba2c8" stroke-width="3" marker-end="url(#arrow)"/>
+  <path d="M1020 285 C1020 345 805 355 477 355 C385 355 375 317 430 287" fill="none" stroke="url(#purple)" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="624" y="342" fill="#c7b8f8" font-family="Inter,Segoe UI,sans-serif" font-size="15" text-anchor="middle">Interaction Layer → Render Layer</text>
+</svg>

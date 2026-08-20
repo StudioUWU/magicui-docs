@@ -18,10 +18,10 @@
   </g>
   <g>
     <rect x="905" y="380" width="225" height="82" rx="10" fill="#2b3a53" stroke="#7087aa"/>
-    <text x="926" y="411" fill="#a8b9d0" font-family="Inter,Segoe UI,sans-serif" font-size="12" font-weight="700">GET WIDGET</text>
+    <text x="926" y="411" fill="#a8b9d0" font-family="Inter,Segoe UI,sans-serif" font-size="12" font-weight="700">GET</text>
     <text x="926" y="439" fill="#fff" font-family="Inter,Segoe UI,sans-serif" font-size="17">MagicUIView</text><circle cx="912" cy="437" r="7" fill="#53bfd4"/>
     <rect x="905" y="500" width="225" height="92" rx="10" fill="#2b3a53" stroke="#7087aa"/>
-    <text x="926" y="531" fill="#a8b9d0" font-family="Inter,Segoe UI,sans-serif" font-size="12" font-weight="700">EXPOSE ON SPAWN</text>
+    <text x="926" y="531" fill="#a8b9d0" font-family="Inter,Segoe UI,sans-serif" font-size="12" font-weight="700">GET</text>
     <text x="926" y="561" fill="#fff" font-family="Inter,Segoe UI,sans-serif" font-size="17">MagicUISource</text><circle cx="912" cy="559" r="7" fill="#53bfd4"/>
   </g>
   <path d="M304 219 C365 219 393 190 463 190" fill="none" stroke="#fff" stroke-width="3" marker-end="url(#exec)"/>

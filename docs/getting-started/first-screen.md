@@ -82,8 +82,9 @@ In `WBP_MagicUIScreen`:
 6. In the Graph, add **Event Construct**.
 7. Drag `MagicUIView` into the graph as **Get**.
 8. Drag from it and add **Set Source Component**.
-9. Connect `MagicUISource` to **In Source Component**.
-10. Connect the Event Construct execution pin to the setter.
+9. Drag `MagicUISource` into the graph as **Get**. 
+10. Connect `MagicUISource` to **In Source Component**.
+11. Connect the Event Construct execution pin to the setter.
 
 ![Widget Blueprint source-component wiring](../assets/diagrams/widget-source-wiring.svg)
 

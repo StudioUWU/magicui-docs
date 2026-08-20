@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1480" height="700" viewBox="0 0 1480 700" role="img" aria-labelledby="title desc">
+  <title id="title">Blueprint graph that sends a Vue UIState route to MagicUI</title>
+  <desc id="desc">On Page Loaded calls Post Message to Page on the Magic UI Component with the JSON value UIState GameHud. The True and False execution outputs print whether the route message was queued or rejected.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1">
+      <stop stop-color="#0d1425"/>
+      <stop offset="1" stop-color="#17102a"/>
+    </linearGradient>
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r="1" fill="#314057"/>
+    </pattern>
+    <marker id="exec" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto">
+      <path d="M0 0v6l9-3z" fill="#f1f4f9"/>
+    </marker>
+    <marker id="data" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto">
+      <path d="M0 0v6l9-3z" fill="#55c9de"/>
+    </marker>
+  </defs>
+
+  <rect width="1480" height="700" rx="24" fill="url(#bg)"/>
+  <rect x="24" y="24" width="1432" height="652" rx="18" fill="url(#grid)"/>
+  <text x="52" y="64" fill="#dfe8f8" font-family="Inter,Segoe UI,sans-serif" font-size="20" font-weight="700">BP_MagicUIHost · Send Vue Route</text>
+
+  <g font-family="Inter,Segoe UI,sans-serif">
+    <g>
+      <rect x="50" y="135" width="230" height="140" rx="9" fill="#612039" stroke="#d75b84"/>
+      <rect x="50" y="135" width="230" height="36" rx="9" fill="#8c2e50"/>
+      <text x="69" y="160" fill="#fff" font-size="15" font-weight="700">On Page Loaded</text>
+      <text x="69" y="190" fill="#f1b6ca" font-size="12">MAGIC UI COMPONENT EVENT</text>
+      <text x="69" y="238" fill="#dce9f7" font-size="13">URL</text>
+      <circle cx="273" cy="208" r="6" fill="#fff"/>
+      <circle cx="273" cy="234" r="6" fill="#e56cae"/>
+    </g>
+
+    <g>
+      <rect x="390" y="90" width="500" height="370" rx="10" fill="#244f3b" stroke="#61c88e"/>
+      <rect x="390" y="90" width="500" height="40" rx="10" fill="#347c55"/>
+      <text x="412" y="117" fill="#fff" font-size="17" font-weight="700">MagicUIComponent · Post Message to Page</text>
+
+      <circle cx="397" cy="208" r="6" fill="#fff"/>
+      <circle cx="883" cy="185" r="6" fill="#fff"/>
+      <text x="815" y="190" fill="#fff" font-size="13" font-weight="700">True</text>
+      <circle cx="883" cy="285" r="6" fill="#fff"/>
+      <text x="808" y="290" fill="#fff" font-size="13" font-weight="700">False</text>
+
+      <circle cx="397" cy="258" r="6" fill="#55c9de"/>
+      <text x="416" y="263" fill="#dce9f7" font-size="13">Target · MagicUIComponent</text>
+
+      <circle cx="397" cy="326" r="6" fill="#e56cae"/>
+      <text x="416" y="311" fill="#dce9f7" font-size="13">Json Value</text>
+      <rect x="416" y="326" width="430" height="54" rx="6" fill="#111827" stroke="#9d5c85"/>
+      <text x="435" y="359" fill="#fff" font-family="Consolas,Menlo,monospace" font-size="16">{&quot;UIState&quot;:&quot;GameHud&quot;}</text>
+
+      <text x="416" y="418" fill="#aeeac7" font-size="12">SEND AFTER ON PAGE LOADED</text>
+    </g>
+
+    <g>
+      <rect x="1010" y="120" width="400" height="150" rx="9" fill="#22526d" stroke="#58bdd7"/>
+      <rect x="1010" y="120" width="400" height="36" rx="9" fill="#2a7392"/>
+      <text x="1030" y="145" fill="#fff" font-size="15" font-weight="700">Print String</text>
+      <circle cx="1017" cy="185" r="6" fill="#fff"/>
+      <text x="1036" y="205" fill="#9fb2cc" font-size="12" font-weight="700">IN STRING</text>
+      <rect x="1036" y="215" width="340" height="34" rx="5" fill="#111827" stroke="#7188aa"/>
+      <text x="1052" y="237" fill="#fff" font-size="14">Route message queued</text>
+    </g>
+
+    <g>
+      <rect x="1010" y="310" width="400" height="150" rx="9" fill="#22526d" stroke="#58bdd7"/>
+      <rect x="1010" y="310" width="400" height="36" rx="9" fill="#2a7392"/>
+      <text x="1030" y="335" fill="#fff" font-size="15" font-weight="700">Print String</text>
+      <circle cx="1017" cy="375" r="6" fill="#fff"/>
+      <text x="1036" y="395" fill="#9fb2cc" font-size="12" font-weight="700">IN STRING</text>
+      <rect x="1036" y="405" width="340" height="34" rx="5" fill="#111827" stroke="#7188aa"/>
+      <text x="1052" y="427" fill="#fff" font-size="14">Route message rejected</text>
+    </g>
+
+    <g>
+      <rect x="70" y="500" width="270" height="100" rx="9" fill="#2b3a53" stroke="#7188aa"/>
+      <text x="94" y="533" fill="#9fb2cc" font-size="12" font-weight="700">ACTOR COMPONENT</text>
+      <text x="94" y="570" fill="#fff" font-size="16">MagicUIComponent</text>
+      <circle cx="333" cy="568" r="6" fill="#55c9de"/>
+    </g>
+  </g>
+
+  <path d="M280 208 H388" fill="none" stroke="#f1f4f9" stroke-width="3" marker-end="url(#exec)"/>
+  <path d="M890 185 H1008" fill="none" stroke="#f1f4f9" stroke-width="3" marker-end="url(#exec)"/>
+  <path d="M890 285 H955 V375 H1008" fill="none" stroke="#f1f4f9" stroke-width="3" marker-end="url(#exec)"/>
+  <path d="M333 568 H360 V258 H388" fill="none" stroke="#55c9de" stroke-width="3" marker-end="url(#data)"/>
+
+  <text x="740" y="642" fill="#98abc8" font-family="Inter,Segoe UI,sans-serif" font-size="15" text-anchor="middle">A True output means the JSON was queued. Confirm delivery by watching Vue change to the Game HUD route.</text>
+</svg>

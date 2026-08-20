@@ -32,6 +32,8 @@ example:
     ├── pages/
     │   ├── GameHud.vue
     │   └── MainMenu.vue
+    ├── services/
+    │   └── magicUIState.ts
     └── router/
         └── index.ts
 ```
@@ -420,6 +422,143 @@ The browser preview does not provide `globalThis.magic`, so **Notify Unreal**
 shows a preview message there. MagicUI installs the bridge before the page
 scripts run, and the same button posts an object to the component's **On Page
 Message** event inside Unreal.
+
+### Change the route from Unreal
+
+MagicUI sends values from Unreal to the page through the `magic-message` DOM
+event. Add one small service that reads a JSON object with a `UIState` property
+and gives the valid route name to Vue Router.
+
+Create `src/services/magicUIState.ts`:
+
+```typescript
+export type UIState = 'MainMenu' | 'GameHud'
+
+type UIStateListener = (state: UIState) => void
+
+function isUIState(value: unknown): value is UIState {
+  return value === 'MainMenu' || value === 'GameHud'
+}
+
+function readUIState(payload: unknown): UIState | null {
+  if (
+    typeof payload !== 'object' ||
+    payload === null ||
+    !('UIState' in payload)
+  ) {
+    return null
+  }
+
+  if (isUIState(payload.UIState)) {
+    return payload.UIState
+  }
+
+  console.warn(
+    '[MagicUI Vue] UIState must be "MainMenu" or "GameHud".',
+  )
+  return null
+}
+
+export function listenForUIState(listener: UIStateListener): () => void {
+  function handleMagicMessage(event: Event): void {
+    const payload = (event as CustomEvent<unknown>).detail
+    const state = readUIState(payload)
+
+    if (state !== null) {
+      listener(state)
+    }
+  }
+
+  window.addEventListener('magic-message', handleMagicMessage)
+
+  return () => {
+    window.removeEventListener('magic-message', handleMagicMessage)
+  }
+}
+```
+
+The type guard accepts only the two names defined by the router. Unrelated
+messages are ignored, and an invalid `UIState` value writes a warning to the
+JavaScript console instead of navigating to a missing route. MagicUI has
+already parsed **Json Value** before dispatching the event, so `event.detail`
+is the object itself; do not call `JSON.parse` on it.
+
+Now update `src/main.ts` to start the listener and replace the active route:
+
+```typescript
+import 'bootstrap/dist/css/bootstrap.min.css'
+
+import { createApp } from 'vue'
+
+import App from '@/App.vue'
+import router from '@/router'
+import { listenForUIState } from '@/services/magicUIState'
+
+async function startApplication(): Promise<void> {
+  await router.replace({ name: 'MainMenu' })
+  await router.isReady()
+
+  const stopListening = listenForUIState((state) => {
+    void router.replace({ name: state })
+  })
+
+  createApp(App).use(router).mount('#app')
+
+  window.addEventListener('beforeunload', stopListening, { once: true })
+}
+
+void startApplication()
+```
+
+The page starts on `MainMenu`. When Unreal sends `GameHud`, the listener calls
+`router.replace({ name: 'GameHud' })`, and the **Game HUD** page becomes
+visible. `router.replace` changes the current in-memory route without adding a
+browser-history entry.
+
+#### Send the JSON from Blueprint
+
+Wait for **On Page Loaded** before sending the first route. This confirms that
+the document and its JavaScript listener are ready.
+
+1. Open the Actor Blueprint that owns the Magic UI Component.
+2. Select the **Magic UI Component** and add its **On Page Loaded** event.
+3. Drag the component into the graph as a reference.
+4. Drag from the component reference and add **Post Message to Page**.
+5. Connect **On Page Loaded** to **Post Message to Page**.
+6. Set **Json Value** to this exact object:
+
+   ```json
+   {"UIState":"GameHud"}
+   ```
+
+7. Use the node's **True** and **False** execution outputs to print whether the
+   message was accepted for delivery.
+8. Compile, save, and start PIE.
+
+The finished Blueprint graph should look like this:
+
+![Blueprint graph that sends GameHud as the Vue UIState](../assets/diagrams/vue-ui-state-blueprint.svg)
+
+The Vue interface should change from **Main menu** to **Game HUD**. To return
+to the menu later, call **Post Message to Page** again from the appropriate
+Blueprint event with:
+
+```json
+{"UIState":"MainMenu"}
+```
+
+`UIState`, `MainMenu`, and `GameHud` are case-sensitive. Enter the object as
+shown; do not wrap the whole object in another pair of quotes. A **True** output
+means MagicUI queued the message, while the visible route change confirms that
+Vue received and handled it.
+
+Connecting the first message to **On Page Loaded** changes the view as soon as
+the page finishes loading. It is only a simple starting example. After the page
+has loaded, you can call **Post Message to Page** from other Blueprint events as
+well. For example, send a different `UIState` when the player presses a key
+while the UI is open, opens a menu, closes a menu, or reaches a new gameplay
+state. Each event can send `MainMenu`, `GameHud`, or another route name that you
+have added to the Vue router, the `UIState` type, and the `isUIState` check.
 
 ## Install and preview
 

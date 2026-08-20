@@ -6,6 +6,7 @@
     <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#314057"/></pattern>
     <marker id="exec" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto"><path d="M0 0v6l9-3z" fill="#f1f4f9"/></marker>
     <marker id="data" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto"><path d="M0 0v6l9-3z" fill="#55c9de"/></marker>
+    <marker id="result" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto"><path d="M0 0v6l9-3z" fill="#9b7bed"/></marker>
   </defs>
   <rect width="1500" height="760" rx="24" fill="url(#bg)"/>
   <rect x="24" y="24" width="1452" height="712" rx="18" fill="url(#grid)"/>
@@ -62,8 +63,10 @@
     <g>
       <rect x="1235" y="365" width="220" height="150" rx="9" fill="#2b3a53" stroke="#7188aa"/>
       <text x="1258" y="397" fill="#9fb2cc" font-size="12" font-weight="700">CHECK OUTPUTS</text>
-      <text x="1258" y="432" fill="#fff" font-size="15">Success</text>
-      <text x="1258" y="464" fill="#fff" font-size="15">Is Now Shown</text>
+      <circle cx="1242" cy="432" r="6" fill="#9b7bed"/>
+      <text x="1260" y="437" fill="#fff" font-size="15">Success</text>
+      <circle cx="1242" cy="464" r="6" fill="#9b7bed"/>
+      <text x="1260" y="469" fill="#fff" font-size="15">Is Now Shown</text>
       <text x="1258" y="494" fill="#9fb2cc" font-size="12">Use state only on success</text>
     </g>
 
@@ -75,23 +78,24 @@
     </g>
 
     <g>
-      <rect x="20" y="475" width="240" height="90" rx="9" fill="#2b3a53" stroke="#7188aa"/>
-      <text x="42" y="504" fill="#9fb2cc" font-size="12" font-weight="700">ACTOR COMPONENT</text>
-      <text x="42" y="543" fill="#fff" font-size="16">MagicUIComponent</text>
-      <circle cx="253" cy="541" r="6" fill="#55c9de"/>
+      <rect x="350" y="475" width="240" height="90" rx="9" fill="#2b3a53" stroke="#7188aa"/>
+      <text x="374" y="504" fill="#9fb2cc" font-size="12" font-weight="700">ACTOR COMPONENT</text>
+      <text x="374" y="543" fill="#fff" font-size="16">MagicUIComponent</text>
+      <circle cx="583" cy="541" r="6" fill="#55c9de"/>
     </g>
   </g>
 
   <path d="M230 210H293" fill="none" stroke="#fff" stroke-width="3" marker-end="url(#exec)"/>
-  <path d="M595 210 C635 210 645 138 688 138" fill="none" stroke="#fff" stroke-width="3" marker-end="url(#exec)"/>
+  <path d="M595 210 H615 V138 H688" fill="none" stroke="#fff" stroke-width="3" marker-end="url(#exec)"/>
 
-  <path d="M588 326 C635 326 632 210 695 210" fill="none" stroke="#55c9de" stroke-width="3" marker-end="url(#data)"/>
-  <path d="M253 676 C280 676 270 182 300 182" fill="none" stroke="#55c9de" stroke-width="3" marker-end="url(#data)"/>
-  <path d="M253 676 C525 720 650 660 650 250 H695" fill="none" stroke="#55c9de" stroke-width="2.5" marker-end="url(#data)"/>
-  <path d="M253 541 C272 541 265 250 300 250" fill="none" stroke="#55c9de" stroke-width="3" marker-end="url(#data)"/>
-  <path d="M253 541 C470 585 670 585 670 170 H695" fill="none" stroke="#55c9de" stroke-width="2.5" marker-end="url(#data)"/>
-  <path d="M1183 442H1233" fill="none" stroke="#9b7bed" stroke-width="2.5" marker-end="url(#data)"/>
-  <path d="M1183 487H1233" fill="none" stroke="#9b7bed" stroke-width="2.5" marker-end="url(#data)"/>
+  <path d="M583 541 H630 V170 H695" fill="none" stroke="#55c9de" stroke-width="3" marker-end="url(#data)"/>
+  <path d="M622 326 H638" fill="none" stroke="#11162a" stroke-width="8"/>
+  <path d="M588 326 H650 V210 H695" fill="none" stroke="#55c9de" stroke-width="3" marker-end="url(#data)"/>
+  <path d="M253 676 H275 V182 H300" fill="none" stroke="#55c9de" stroke-width="3" marker-end="url(#data)"/>
+  <path d="M253 676 H290 V590 H670 V250 H695" fill="none" stroke="#55c9de" stroke-width="3" marker-end="url(#data)"/>
+  <path d="M583 541 H610 V400 H290 V250 H300" fill="none" stroke="#55c9de" stroke-width="3" marker-end="url(#data)"/>
+  <path d="M1183 442 H1210 V432 H1240" fill="none" stroke="#9b7bed" stroke-width="2.5" marker-end="url(#result)"/>
+  <path d="M1183 487 H1218 V464 H1240" fill="none" stroke="#9b7bed" stroke-width="2.5" marker-end="url(#result)"/>
 
   <text x="940" y="704" fill="#98abc8" font-family="Inter,Segoe UI,sans-serif" font-size="15" text-anchor="middle">This replaces Add to Viewport, Set Input Mode, and Show Cursor from Option 1.</text>
 </svg>

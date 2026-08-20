@@ -84,6 +84,7 @@ nav:
       - 4. Render your first screen: getting-started/first-screen.md
   - Core guides:
       - Web assets and local content: guides/web-assets.md
+      - Build a Vue interface: guides/vue-project.md
       - Magic UI Component: guides/magic-ui-component.md
       - Magic UI widget and input: guides/widget-and-input.md
       - Loading and page lifecycle: guides/loading-and-lifecycle.md

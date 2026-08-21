@@ -8,13 +8,10 @@ Unreal Engine **5.8**.
 | Target | Supported |
 | --- | --- |
 | **Windows x64 (Win64)** | Yes |
-| **macOS arm64 (Apple silicon)** | Yes; monitor refresh uses the manual **Max FPS** fallback |
+| **macOS arm64 (Apple silicon)** | Yes |
 | **Linux** | No |
-| **Consoles** | No |
-| **Mobile** | No |
-
-Obtain a package that matches the exact platform, architecture,
-and Unreal version.
+| **Consoles** | No, but planned |
+| **Mobile** | No, but planned |
 
 ## Local content only
 
